@@ -67,21 +67,39 @@ hr {
 
 /* ESTILO PARA EL FORM */
 
-.input{
+.input {
     height: 50px;
     width: 20em;
-    margin: 20px;
+    margin: 20px 20px 0 20px;
 }
 
+/**/
 .input::placeholder {
     font-size: 19px;
     opacity: .4;
+    transition: all .3s ease;
 }
+
+.input {
+    position: relative;
+}
+#label-usuario {
+    position: absolute;
+    padding: 0;
+    z-index: 9999;
+    
+}
+#label-usuario {
+    font-size: 20px;
+    color: #808080a4;
+}
+
+/**/
 
 .btn {
     height: 50px;
     width: 20em;
-    margin: 10px 20px;
+    margin: 20px 20px 50px;
     background-color: var(--color-primario);
     font-weight: bold;
 }
@@ -132,4 +150,40 @@ hr {
 
 .btn-link:hover {
     text-decoration: underline;
+}
+
+/*  ESTILOS PARA EL MENSAJE DE ERROR  */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 10px 10px 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    color: #a94442;
+    display: none;
+    width: auto;
+}
+
+.alert div {
+    text-align: left;
+}
+
+.alert a {
+    color: #ff8f8fd3;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bolder;
+    transition: all .3s ease;
+    height: auto;
+    display: flex;
+    align-items: start;
+
+}
+
+.alert a:hover {
+    color: #ff3c3c;
 }

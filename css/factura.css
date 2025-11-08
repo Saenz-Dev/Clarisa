@@ -1,0 +1,40 @@
+.alertDangerItems {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    color: #a94442;
+    width: auto;
+}
+
+.alertaGlobal {
+    z-index: 9999999;
+    position: fixed !important;
+    height: 60em;
+    top: 40px;
+    right: 40px;
+    padding: 10px 10px 10px 10px;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.alert div {
+    text-align: left;
+}
+
+.alert a {
+    position: absolute; 
+    top: 5px;
+    right: 10px;
+    color: #ff8f8fd3;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bolder;
+    transition: all .3s ease;
+    display: flex;
+    align-items: start;
+}
+
+.alert a:hover {
+    color: #ff3c3c;
+}

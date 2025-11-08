@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HOJA DE ESTILO -->
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="./css/factura.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Liter&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>Clarisa Software de Facturación</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="./img/icono_pestana.png">
+</head>
+
+<body>
+    <div class="alertaGlobal" style="display: none;"></div>
+    <div class="loader">
+        <img src="./img/icons8-carga.gif">
+    </div>
+    <div class="wrap"></div>
+    <nav class="navbar nav-principal">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="./img/logo.png" class="d-inline-block align-top"
+                        alt="Logo de Clarisa"></a>
+            </div>
+            <ul class="nav justify-content-center gap-4 px-3" id="nav-bar">
+                <li class="nav-item"><a class="nav-link" href="./inicio.html">Inicio</a></li>
+                <li class="nav-item active"><a class="nav-link" href="./factura.html">Facturación</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Página 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Página 3</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Página 4</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" href="#"><i class="bi bi-list"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Opcion 1</a>
+                        <a class="dropdown-item" href="#">Opcion 2</a>
+                        <a class="dropdown-item" href="#">Opcion 3</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- <div class="alert alert-danger alertDangerItems" role="alert">
+        <div class="text-left p-2">
+            <strong></strong>
+            <p class="my-1"></p>
+        </div>
+        <a href="#" class="close mx-auto pb-4" data-dismiss="alert" aria-label="close">&times;</a>
+    </div> -->
+
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <form action="">
+                        <div class="card-body mx-2">
+                            <div class="row mb-4">
+                                <div class="col-md-2 form-group">
+                                    <label for="nit" class="form-label small px-2">NIT</label>
+                                    <input type="text" class="form-control form-control-sm" id="nit" value="12345" required>
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="num-resolucion" class="form-label small px-2">Numero de
+                                        Resolución</label>
+                                    <input type="number" class="form-control form-control-sm" id="num-resolucion"
+                                        value="18760000001">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="prefijoDcto" class="form-label small px-2">Prefijo Dcto</label>
+                                    <input type="text" class="form-control form-control-sm" id="prefijoDcto"
+                                        value="SETP">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="consecutivoDcto" class="form-label small px-2">Consecutivo Dcto</label>
+                                    <input type="number" class="form-control form-control-sm" id="consecutivoDcto"
+                                        value="990000085">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="fechaVencimiento" class="form-label small px-2">Fecha de
+                                        Vencimiento</label>
+                                    <input type="date" class="form-control form-control-sm" id="fechaVencimiento">
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-2 form-group">
+                                    <label for="mediosPago" class="form-label small px-2">Medios de Pago</label>
+                                    <select class="form-control form-control-sm" name="mediosPago"
+                                        id="mediosPago"></select>
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="formaPago" class="form-label small px-2">Forma de Pago</label>
+                                    <select class="form-control form-control-sm" name=" formaPago"
+                                        id="formaPago"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row" style="display: none;">
+            <div class="col-md-12">
+                <div class="card pb-4">
+                    <div class="card-header">Extensiones</div>
+                    <div class="card-body">
+                        <div class="card mt-3">
+                            <div class="card-header">
+                                Beneficios del Comprador
+                            </div>
+                            <div class="row">
+                                <div class="card-body mx-3">
+                                    <div class="row">
+                                        <div class="col-md-2 form-group">
+                                            <label class="form-label small px-2" for="codigo">Código</label>
+                                            <input type="text" class="form-control form-control-sm" id="codigo">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label for="nombreApellido" class="form-label small px-2">Nombres y
+                                                Apellidos</label>
+                                            <input type="text" class="form-control form-control-sm" id="nombreApellido">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label for="puntos" class="form-label small px-2">Puntos</label>
+                                            <input type="text" class="form-control form-control-sm" id="puntos">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                Punto de Venta
+                            </div>
+                            <div class="row">
+                                <div class="card-body mx-3">
+                                    <div class="row">
+                                        <div class="col-md-2 form-group">
+                                            <label class="form-label small px-2" for="placaCaja">Placa de Caja</label>
+                                            <input type="text" class="form-control form-control-sm" id="placaCaja">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label for="ubicacionCaja" class="form-label small px-2">Ubicación de
+                                                Caja</label>
+                                            <input type="text" class="form-control form-control-sm" id="ubicacionCaja">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label for="cajero" class="form-label small px-2">Cajero</label>
+                                            <input type="text" class="form-control form-control-sm" id="cajero">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label for="tipoCaja" class="form-label small px-2">Tipo de Caja</label>
+                                            <input type="text" class="form-control form-control-sm" id="tipoCaja">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label for="codigoVenta" class="form-label small px-2">Código de
+                                                Venta</label>
+                                            <input type="text" class="form-control form-control-sm" id="codigoVenta">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <label for="subTotal" class="form-label small px-2">SubTotal de
+                                                Venta</label>
+                                            <input type="text" class="form-control form-control-sm" id="subTotal">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Cliente
+                    </div>
+                    <form action="">
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-md-2 form-group">
+                                    <label for="nombreRazonSocial" class="form-label small px-2">Razón
+                                        Social</label>
+                                    <input type="text" class="form-control form-control-sm" id="nombreRazonSocial" required>
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="tipoIdentificacion" class="form-label small px-2">Tipo de
+                                        Identificación</label>
+                                    <select class="form-control form-control-sm" name="tipoIdentificacion"
+                                        id="tipoIdentificacion">
+                                        <!-- Llenar desde JS para cada tipo de id según datos de documentación de API -->
+                                    </select>
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="numIdentificacion" class="form-label small px-2">#
+                                        Identificación</label>
+                                    <input type="number" class="form-control form-control-sm" id="numIdentificacion">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="email" class="form-label small px-2">Email</label>
+                                    <input type="email" class="form-control form-control-sm" id="email">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="naturaleza" class="form-label small px-2">Naturaleza</label>
+                                    <select class="form-control form-control-sm" name="naturaleza"
+                                        id="naturaleza"></select>
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="ciudad" class="form-label small px-2">Ciudad</label>
+                                    <select class="form-control form-control-sm" name="ciudad" id="ciudad">
+                                        <!-- Llenar desde JS para cada ciudad -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-2 form-group">
+                                    <label for="telefono" class="form-label small px-2">Teléfono</label>
+                                    <input type="number" class="form-control form-control-sm" id="telefono">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="direccion" class="form-label small px-2">Dirección</label>
+                                    <input type="text" class="form-control form-control-sm" id="direccion">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="responsabilidadesFiscales" class="form-label small px-2">Resp.
+                                        Fiscales</label>
+                                    <select class="form-control form-control-sm" name="responsabilidadesFiscales"
+                                        id="responsabilidadesFiscales">
+                                        <!-- Llenar desde JS para cada responsabilidades fiscales desde Tabla de documentacion de API -->
+                                    </select>
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="respTributarias" class="form-label small px-2">Resp. Fiscales</label>
+                                    <select class="form-control form-control-sm" name="respTributarias"
+                                        id="respTributarias">
+                                        <!-- Llenar desde JS para cada responsabilidades Tributarias desde Tabla de documentacion de API -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        Observaciones
+                    </div>
+                    <form class="form-floating" action="">
+                        <div class="card-body">
+                            <div class="form-floating">
+                                <textarea class="form-control" name="floatingTextarea" id="floatingTextarea"
+                                    placeholder="Comentario" aria-setsize="false" style="resize: none;"></textarea>
+                                <label for="floatingTextarea">Comentario</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Total
+                    </div>
+                    <form class="form-floating" action="">
+                        <div class="card-body">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="total" placeholder="0">
+                                <label for="total">Valor</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Items
+                    </div>
+                    <form action="" class="form-floating">
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="nombreProducto"
+                                            id="nombreProducto" placeholder="Nombre Producto">
+                                        <label for="nombreProducto">Producto</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" name="precioUnitario"
+                                            id="precioUnitario" placeholder="Precio Unitario">
+                                        <label for="precioUnitario">Precio Unitario</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select" name="esRegalo" id="esRegalo"
+                                            placeholder="Es Regalo"></select>
+                                        <label for="esRegalo">Regalo (SI/NO)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" name="cantidad" id="cantidad"
+                                            placeholder="Cantidad">
+                                        <label for="cantidad">Cantidad</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="codigoProducto"
+                                            id="codigoProducto" placeholder="Codigo de Producto">
+                                        <label for="codigoProducto">Código Producto</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select" name="unidad" id="unidad"
+                                            placeholder="Unidad de Producto"></select>
+                                        <label for="unidad">Unidad</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" name="valorDescuento"
+                                            id="valorDescuento" placeholder="Descuento" value="0">
+                                        <label for="valorDescuento">Descuento</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="observacion" id="observacion"
+                                            placeholder="Observación">
+                                        <label for="observacion">Observación</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    Impuestos
+                                                </div>
+                                                <div class="col-md-8 d-flex justify-content-end">
+                                                    <button type="button" class="btn btn-primary"
+                                                        id="agregarImpuesto">Agregar Impuesto</button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <form class="form-floating" action="">
+                                                    <div class="row mb-4">
+                                                        <div class="col-md-2">
+                                                            <div class="form-floating">
+                                                                <select class="form-select" name="condicionImpuesto"
+                                                                    id="condicionImpuesto" placeholder="Tipo"></select>
+                                                                <label for="condicionImpuesto">Condición
+                                                                    Impuesto</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-floating">
+                                                                <select class="form-select" name="tipoImpuesto"
+                                                                    id="tipoImpuesto" placeholder="Tipo"></select>
+                                                                <label for="tipoImpuesto">Tipo</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-floating">
+                                                                <select class="form-select " name="claseImpuesto"
+                                                                    id="claseImpuesto" placeholder="Clase de Impuesto">
+                                                                    <!-- Llenar desde JS -->
+                                                                </select>
+                                                                <label for="claseImpuesto">Clase de Impuesto</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-floating">
+                                                                <input type="number" class="form-control"
+                                                                    name="tarifaTributo" id="tarifaTributo"
+                                                                    placeholder="Tarifa">
+                                                                <label for="tarifaTributo">Tarifa</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-floating">
+                                                                <input type="number" class="form-control" name="factor"
+                                                                    id="factor" placeholder="factor" value="0">
+                                                                <label for="factor">Factor</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="row mb-4" id="cardsImpuesto"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary btn-aggProducto">Agregar
+                                        Producto</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            Productos
+                        </div>
+                        <table class="table table-hover table-bordered border-primary
+                        ">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width: 20%;">Nombre</th>
+                                    <th scope="col" style="width: 20%;">Precio Base Unitario</th>
+                                    <th scope="col" style="width: 10%;">Es Regalo?</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Unidad</th>
+                                    <th scope="col">ValorDescuento</th>
+                                    <th scope="col" style="width: 20%;">Observación</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tProductos">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="container mt-5" style="display: none;">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-4">
+                                Descuentos
+                            </div>
+                            <div class="col-md-8 d-flex justify-content-end">
+                                <button type="button" class="btn btn-primary ">Agregar Descuento</button>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="" class="form-floating">
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select" name="tipoDescuento" id="tipoDescuento"></select>
+                                        <label for="tipoDescuento">Tipo</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select" name="codigoDescuentosCargos"
+                                            id="codigoDescuentosCargos">
+                                            
+                                        </select>
+                                        <label for="codigoDescuentosCargos">Código</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" name="valor" id="valor"
+                                            placeholder="Valor">
+                                        <label for="valor">Valor</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="observacionDescuentosCargos"
+                                            placeholder="Observación" style="resize: none;"></textarea>
+                                        <label for="observacionDescuentosCargos">Observación</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="row tipo-Des">
+                                                                    <div class="col-md-6">
+                                                                        <h6 class="card-title text-end">Tipo:</h6>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <p class="card-text">DESCUENTO</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row codigo-Des">
+                                                                    <div class="col-md-6">
+                                                                        <h6 class="card-title text-end">Código:</h6>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <p class="card-text">00</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row tarifa-tributo">
+                                                                    <div class="col-md-6">
+                                                                        <h6 class="card-title text-end">Tarifa Tributo:
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <p class="card-text">2000</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row factor">
+                                                                    <div class="col-md-6">
+                                                                        <h6 class="card-title text-end">Factor:</h6>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <p class="card-text">--</p>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <button type="button" class="btn btn-primary w-50 btn-enviar">CREAR FACTURA</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/bootstrap-icons/font/bootstrap-icons.json"></script>
+    <script type="module" src="js/FacturaService.js"></script>
+</body>
+
+</html>

@@ -10,13 +10,13 @@ h1, h2, h3, p {
 /** FONDO BODY **/
 body {
     min-height: 100vh;
-    will-change: backdrop-filter;
+    will-change: auto;
     background: url('../img/fondo.jpg') no-repeat center center/cover;
 }
 
 /** ESTILO PARA EL LOADER **/
 .loader {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     display: flex;

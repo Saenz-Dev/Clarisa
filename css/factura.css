@@ -1,6 +1,6 @@
 .alertDangerItems {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     color: #a94442;
@@ -23,7 +23,7 @@
 }
 
 .alert a {
-    position: absolute; 
+    position: absolute;
     top: 5px;
     right: 10px;
     color: #ff8f8fd3;
@@ -37,4 +37,32 @@
 
 .alert a:hover {
     color: #ff3c3c;
+}
+
+#nav-bar-secundario {
+    display: none;
+}
+
+#nav-bar {
+    display: flex;
+}
+
+.cardProductos {
+    overflow: scroll;
+    
+}
+
+table {
+    width: 90%;
+    overflow: hidden;
+}
+
+@media (max-width: 1210px) {
+    #nav-bar {
+        display: none;
+    }
+
+    #nav-bar-secundario {
+        display: block;
+    }
 }

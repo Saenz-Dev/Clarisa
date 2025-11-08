@@ -48,6 +48,16 @@
                     </div>
                 </li>
             </ul>
+            <ul class="nav justify-content-center gap-4 px-3" id="nav-bar-secundario">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" href="#"><i class="bi bi-list"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="./inicio.html">Inicio</a>
+                        <a class="dropdown-item" href="./factura.html">Facturación</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -68,7 +78,8 @@
                             <div class="row mb-4">
                                 <div class="col-md-2 form-group">
                                     <label for="nit" class="form-label small px-2">NIT</label>
-                                    <input type="text" class="form-control form-control-sm" id="nit" value="12345" required>
+                                    <input type="text" class="form-control form-control-sm" id="nit" value="12345"
+                                        required>
                                 </div>
                                 <div class="col-md-2 form-group">
                                     <label for="num-resolucion" class="form-label small px-2">Numero de
@@ -194,7 +205,8 @@
                                 <div class="col-md-2 form-group">
                                     <label for="nombreRazonSocial" class="form-label small px-2">Razón
                                         Social</label>
-                                    <input type="text" class="form-control form-control-sm" id="nombreRazonSocial" required>
+                                    <input type="text" class="form-control form-control-sm" id="nombreRazonSocial"
+                                        required>
                                 </div>
                                 <div class="col-md-2 form-group">
                                     <label for="tipoIdentificacion" class="form-label small px-2">Tipo de
@@ -429,7 +441,7 @@
                                 <div class="col-md-12 d-flex justify-content-end">
                                     <button type="button" class="btn btn-primary btn-aggProducto">Agregar
                                         Producto</button>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -437,11 +449,11 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container mt-5">
         <div class="row mb-5">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card cardProductos">
                     <div class="card-body">
                         <div class="card-title">
                             Productos

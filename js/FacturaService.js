@@ -212,6 +212,7 @@ $('.btn-aggProducto').on('click', function () {
     );
     agregarItemsAFactura();
     agregarImpuestosAFactura();
+    calcularTotal();
 
     // factura.items.cantidad = campoCantidad.val();
     // factura.items.codigoProducto = campoCodigoProducto.val();
@@ -265,7 +266,7 @@ const apiURL = 'https://pru.clarisacloud.com:8443/api/factura/rest/v1/factura/na
 
 $('.btn-enviar').on("click", function () {
 
-    // validarCamposTodos();
+    validarCamposTodos();
     // 🔹 Datos principales de la factura
     factura.nit = $('#nit').val();
     factura.numeroResolucion = $('#num-resolucion').val();
@@ -409,5 +410,20 @@ function mostrarMensaje(mensaje) {
             $(this).empty();
         });
     }, 6000);
+}
+
+/** Calcular el total **/
+function calcularTotal() {
+    let total = 0;
+    for (const item of factura.items) {
+        let totalProducto = 0;
+        if (item.esRegalo == false) totalProducto = item.precioBaseUnitario * item.cantidad;
+        let impuestoTotal = 0;
+        for (const impuesto of item.impuestos) {
+            impuestoTotal += (impuesto.tarifaTributo / 100) * totalProducto;
+        }
+        total += totalProducto + impuestoTotal;
+    }
+    $('#total').val(total);
 }
 

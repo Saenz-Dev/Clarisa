@@ -73,46 +73,57 @@
         <div class="row mb-5">
             <div class="col-md-12">
                 <div class="card">
-                    <form action="">
+                    <form class="form-floating" action="">
                         <div class="card-body mx-2">
                             <div class="row mb-4">
-                                <div class="col-md-2 form-group">
-                                    <label for="nit" class="form-label small px-2">NIT</label>
-                                    <input type="text" class="form-control form-control-sm" id="nit" value="12345"
-                                        required>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="nit" value="12345" placeholder="NIT"
+                                            required>
+                                        <label for="nit">NIT</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="num-resolucion" class="form-label small px-2">Numero de
-                                        Resolución</label>
-                                    <input type="number" class="form-control form-control-sm" id="num-resolucion"
-                                        value="18760000001">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control form-control-sm" id="num-resolucion"
+                                            value="18760000001">
+                                        <label for="num-resolucion">Numero deResolución</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="prefijoDcto" class="form-label small px-2">Prefijo Dcto</label>
-                                    <input type="text" class="form-control form-control-sm" id="prefijoDcto"
-                                        value="SETP">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="prefijoDcto" value="SETP"
+                                            placeholder="prefijoDcto">
+                                        <label for="prefijoDcto">Prefijo Dcto</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="consecutivoDcto" class="form-label small px-2">Consecutivo Dcto</label>
-                                    <input type="number" class="form-control form-control-sm" id="consecutivoDcto"
-                                        value="990000085">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control form-control-sm" id="consecutivoDcto"
+                                            value="990000085" placeholder="consecutivoDcto">
+                                        <label for="consecutivoDcto">Consecutivo Dcto</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="fechaVencimiento" class="form-label small px-2">Fecha de
-                                        Vencimiento</label>
-                                    <input type="date" class="form-control form-control-sm" id="fechaVencimiento">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control form-control-sm" id="fechaVencimiento"
+                                            placeholder="fechaVencimiento">
+                                        <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select" name="mediosPago" id="mediosPago"></select>
+                                        <label for="mediosPago">Medios de Pago</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <div class="col-md-2 form-group">
-                                    <label for="mediosPago" class="form-label small px-2">Medios de Pago</label>
-                                    <select class="form-control form-control-sm" name="mediosPago"
-                                        id="mediosPago"></select>
-                                </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="formaPago" class="form-label small px-2">Forma de Pago</label>
-                                    <select class="form-control form-control-sm" name=" formaPago"
-                                        id="formaPago"></select>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select" name=" formaPago" id="formaPago"></select>
+                                        <label for="formaPago">Forma de Pago</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -199,67 +210,87 @@
                     <div class="card-header">
                         Cliente
                     </div>
-                    <form action="">
+                    <form class="form-floating" action="">
                         <div class="card-body">
                             <div class="row mb-4">
-                                <div class="col-md-2 form-group">
-                                    <label for="nombreRazonSocial" class="form-label small px-2">Razón
-                                        Social</label>
-                                    <input type="text" class="form-control form-control-sm" id="nombreRazonSocial"
-                                        required>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control form-control-sm" id="nombreRazonSocial"
+                                            placeholder="Razón Social" required>
+                                        <label for="nombreRazonSocial">Razón Social</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="tipoIdentificacion" class="form-label small px-2">Tipo de
-                                        Identificación</label>
-                                    <select class="form-control form-control-sm" name="tipoIdentificacion"
-                                        id="tipoIdentificacion">
-                                        <!-- Llenar desde JS para cada tipo de id según datos de documentación de API -->
-                                    </select>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm" name="tipoIdentificacion"
+                                            id="tipoIdentificacion">
+                                            <!-- Llenar desde JS según API -->
+                                        </select>
+                                        <label for="tipoIdentificacion">Tipo de Identificación</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="numIdentificacion" class="form-label small px-2">#
-                                        Identificación</label>
-                                    <input type="number" class="form-control form-control-sm" id="numIdentificacion">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control form-control-sm" id="numIdentificacion"
+                                            placeholder="# Identificación">
+                                        <label for="numIdentificacion"># Identificación</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="email" class="form-label small px-2">Email</label>
-                                    <input type="email" class="form-control form-control-sm" id="email">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control form-control-sm" id="email"
+                                            placeholder="Email">
+                                        <label for="email">Email</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="naturaleza" class="form-label small px-2">Naturaleza</label>
-                                    <select class="form-control form-control-sm" name="naturaleza"
-                                        id="naturaleza"></select>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm" name="naturaleza"
+                                            id="naturaleza"></select>
+                                        <label for="naturaleza">Naturaleza</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="ciudad" class="form-label small px-2">Ciudad</label>
-                                    <select class="form-control form-control-sm" name="ciudad" id="ciudad">
-                                        <!-- Llenar desde JS para cada ciudad -->
-                                    </select>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm" name="ciudad" id="ciudad">
+                                            <!-- Llenar desde JS -->
+                                        </select>
+                                        <label for="ciudad">Ciudad</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <div class="col-md-2 form-group">
-                                    <label for="telefono" class="form-label small px-2">Teléfono</label>
-                                    <input type="number" class="form-control form-control-sm" id="telefono">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control form-control-sm" id="telefono"
+                                            placeholder="Teléfono">
+                                        <label for="telefono">Teléfono</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="direccion" class="form-label small px-2">Dirección</label>
-                                    <input type="text" class="form-control form-control-sm" id="direccion">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control form-control-sm" id="direccion"
+                                            placeholder="Dirección">
+                                        <label for="direccion">Dirección</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="responsabilidadesFiscales" class="form-label small px-2">Resp.
-                                        Fiscales</label>
-                                    <select class="form-control form-control-sm" name="responsabilidadesFiscales"
-                                        id="responsabilidadesFiscales">
-                                        <!-- Llenar desde JS para cada responsabilidades fiscales desde Tabla de documentacion de API -->
-                                    </select>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm" name="responsabilidadesFiscales"
+                                            id="responsabilidadesFiscales">
+                                            <!-- Llenar desde JS según la documentación de API -->
+                                        </select>
+                                        <label for="responsabilidadesFiscales">Resp. Fiscales</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 form-group">
-                                    <label for="respTributarias" class="form-label small px-2">Resp. Fiscales</label>
-                                    <select class="form-control form-control-sm" name="respTributarias"
-                                        id="respTributarias">
-                                        <!-- Llenar desde JS para cada responsabilidades Tributarias desde Tabla de documentacion de API -->
-                                    </select>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm" name="respTributarias"
+                                            id="respTributarias">
+                                            <!-- Llenar desde JS según la documentación de API -->
+                                        </select>
+                                        <label for="respTributarias">Resp. Tributarias</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -295,7 +326,7 @@
                     <form class="form-floating" action="">
                         <div class="card-body">
                             <div class="form-floating">
-                                <input type="number" class="form-control" id="total" placeholder="0">
+                                <input type="number" class="form-control" id="total" placeholder="0" disabled>
                                 <label for="total">Valor</label>
                             </div>
                         </div>
